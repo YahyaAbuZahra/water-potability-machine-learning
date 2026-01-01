@@ -1,7 +1,7 @@
 # 💧 Water Potability Classification
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Library](https://img.shields.io/badge/Library-Scikit--Learn%20|%20XGBoost%20|%20LightGBM-orange)
+![Library](https://img.shields.io/badge/Library-Scikit--Learn%20|%20XGBoost%20|%20LightGBM%20|%20Random%20Forest-orange)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
 ## 📌 Project Overview
@@ -9,11 +9,11 @@ This project focuses on predicting water potability based on chemical properties
 
 This work goes beyond basic model fitting by implementing rigorous **Data Leakage checks** (Label Shuffling, Overlap Controls) to ensure the high performance metrics are genuine and not a result of overfitting or leakage.
 
-## 📂 Dataset Information
+##  Dataset Information
 The dataset describes water quality metrics including pH, Hardness, Solids, Chloramines, Sulfate, Conductivity, etc.
 
 * **Source:** [Kaggle - Water Potability](https://www.kaggle.com/datasets/developerghost/water-potability)
-* **⚠️ Important Note on Data Size:** While the standard Kaggle dataset typically contains ~3,000 rows, **this project utilizes an extended dataset of 100,000 records**. This larger volume allows for more reliable statistical analysis and deep learning of complex patterns.
+* ** Important Note on Data Size:** While the standard Kaggle dataset typically contains ~3,000 rows, **this project utilizes an extended dataset of 100,000 records**. This larger volume allows for more reliable statistical analysis and deep learning of complex patterns.
 * **Class Imbalance:** The data is heavily imbalanced:
     * `Class 0` (Not Potable): **92.38%**
     * `Class 1` (Potable): **7.62%**
@@ -31,7 +31,7 @@ To validate the surprisingly high accuracy (>99%), extensive sanity checks were 
 * **Leakage-Safe Transformation:** All scalers and imputers were fitted **only** on the Training set.
 * **Label Shuffle Test:** Randomly shuffled target labels and retrained. The model performance dropped to baseline (Acc ~92%, F1 ~0.0), proving the model is learning real signal, not noise.
 
-## 🚀 Model Performance
+##  Model Performance
 
 Several models were trained and compared, including **Logistic Regression (Baseline), XGBoost, LightGBM, and Random Forest**.
 
@@ -43,7 +43,7 @@ Several models were trained and compared, including **Logistic Regression (Basel
 | XGBoost | 99.57% | 99.82% | 97.27% |
 | Logistic Regression | 78.07% | 84.33% | 36.92% |
 
-### 🏆 Final Model: Random Forest
+###  Final Model: Random Forest
 Random Forest was selected as the final model for its superior balance between Precision and Recall on the minority class.
 
 **Final Test Set Metrics:**
@@ -54,17 +54,19 @@ Random Forest was selected as the final model for its superior balance between P
 
 > **Why Random Forest?** It proved robust against noise and effectively captured non-linear relationships in chemical parameters without requiring complex feature engineering, outperforming gradient boosting methods slightly in F1-score for the positive class.
 
-## 📊 Confusion Matrix (Test Set)
+##  Confusion Matrix (Test Set)
 
 *(Ideally, place a screenshot of your confusion matrix here)*
 
 * **False Negatives (FN):** Only **1** potable sample was missed.
 * **False Positives (FP):** Only **28** non-potable samples were incorrectly classified.
 
-## 📚 References
+##  References
 1. KL, NR, CB. "Water Quality Index Assessment Using Machine Learning Techniques." *Int. Journal of Env. Science and Development*, 2025.
 2. Grinsztajn et al. "Why do tree-based models still outperform deep learning on typical tabular data?" *arXiv*, 2022.
 
 ---
 **Author:** Yahya Abu Zahra | Computer Engineering Student
-**Date:** December 31, 2025
+
+**Date:**  January 1, 2026
+
